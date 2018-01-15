@@ -222,4 +222,6 @@
     <string name="high_touch_polling_rate_title">High touch polling rate</string>
     <string name="high_touch_polling_rate_summary">Increase touchscreen polling rate</string>
 
+    <!-- Volume link notification -->
+    <string name="volume_link_notification_title">Link ring &amp; notification volumes</string>
 </resources>
