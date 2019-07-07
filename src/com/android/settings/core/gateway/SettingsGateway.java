@@ -186,6 +186,7 @@ import com.power.hub.powerhub;
 import com.android.settings.livedisplay.LiveDisplaySettings;
 
 import ink.kscope.settings.wifi.tether.WifiTetherClientManager;
+import com.power.hub.fragments.SmartPixels;
 
 public class SettingsGateway {
 
@@ -358,7 +359,8 @@ public class SettingsGateway {
             SleepMode.class.getName(),
             LiveDisplaySettings.class.getName(),
             WifiTetherClientManager.class.getName(),
-            RunningServices.class.getName()
+            RunningServices.class.getName(),
+            SmartPixels.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -403,6 +405,7 @@ public class SettingsGateway {
             UserBackupSettingsActivity.class.getName(),
             Settings.powerhubActivity.class.getName(),
             Settings.SleepModeActivity.class.getName(),
-            Settings.DevRunningServicesActivity.class.getName()
+            Settings.DevRunningServicesActivity.class.getName(),
+            Settings.SmartPixelsActivity.class.getName(),
     };
 }
