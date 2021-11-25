@@ -69,4 +69,9 @@
     <string name="powerhub_title">Power Hub</string>
     <string name="powerhub_summary">The Power you need</string>
 
+    <!-- Fullscreen gestures -->
+    <string name="other_controls_title">Other controls</string>
+    <string name="fullscreen_gestures_title">Fullscreen gestures</string>
+    <string name="fullscreen_gestures_summary">Hide navbar pill and keyboard space</string>
+
 </resources>
