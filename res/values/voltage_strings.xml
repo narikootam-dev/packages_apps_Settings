@@ -65,4 +65,8 @@
     <string name="package_version">Package version</string>
     <string name="package_version_text"><xliff:g id="version_num">%1$s</xliff:g></string>
 
+    <!--Powerhub-->
+    <string name="powerhub_title">Power Hub</string>
+    <string name="powerhub_summary">Placeholder</string>
+
 </resources>
