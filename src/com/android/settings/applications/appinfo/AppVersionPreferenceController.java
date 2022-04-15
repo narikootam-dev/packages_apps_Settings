@@ -39,6 +39,7 @@ public class AppVersionPreferenceController extends AppInfoPreferenceControllerB
         if (packageInfo == null) {
             return null;
         }
+<<<<<<< HEAD
 
         Context ctx = mContext;
 
@@ -61,8 +62,8 @@ public class AppVersionPreferenceController extends AppInfoPreferenceControllerB
             }
         }
 
-        return ctx.getString(R.string.version_text,
-                BidiFormatter.getInstance().unicodeWrap(packageInfo.versionName))
+        return mContext.getString(R.string.package_version_text,
+                BidiFormatter.getInstance().unicodeWrap(packageInfo.versionName));
                 + "\n\n" + packageInfo.packageName
                 + "\nversionCode " + packageInfo.getLongVersionCode()
                 + "\n\ntargetSdk " + packageInfo.applicationInfo.targetSdkVersion
