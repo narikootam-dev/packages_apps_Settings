@@ -35,8 +35,9 @@ import com.android.settings.R;
  */
 public interface Sliceable {
     /**
-     * @return an {@link IntentFilter} that includes all broadcasts which can affect the state of
-     * this Setting.
+     * @return an {@link IntentFilter} that includes all broadcasts which can affect
+     *         the state of
+     *         this Setting.
      */
     default IntentFilter getIntentFilter() {
         return null;
@@ -52,7 +53,8 @@ public interface Sliceable {
      * <p>
      * This does not guarantee the setting is available.
      * <p>
-     * {@link #getSliceHighlightMenuRes} should also be overridden when returning true.
+     * {@link #getSliceHighlightMenuRes} should also be overridden when returning
+     * true.
      *
      * @return {@code true} if the controller should be used as a Slice.
      */
@@ -65,7 +67,7 @@ public interface Sliceable {
      * This does not guarantee the setting is available.
      *
      * @return {@code true} if the controller should be used as a Slice, and is
-     * publicly visible to other apps.
+     *         publicly visible to other apps.
      */
     default boolean isPublicSlice() {
         return false;
@@ -80,16 +82,33 @@ public interface Sliceable {
 
     /**
      * @return {@code true} if the setting update asynchronously.
-     * <p>
-     * For example, a Wifi controller would return true, because it needs to update the radio
-     * and wait for it to turn on.
+     *         <p>
+     *         For example, a Wifi controller would return true, because it needs to
+     *         update the radio
+     *         and wait for it to turn on.
      */
     default boolean hasAsyncUpdate() {
         return false;
     }
 
     /**
-     * Whether or not summary comes from something dynamic (ie, not hardcoded in xml)
+     * Copy the key slice information to the clipboard.
+     * It is highly recommended to show the toast to notify users when implemented
+     * this function.
+     */
+    default void copy() {
+    }
+
+    /**
+     * Whether or not it's a copyable slice.
+     */
+    default boolean isCopyableSlice() {
+        return false;
+    }
+
+    /**
+     * Whether or not summary comes from something dynamic (ie, not hardcoded in
+     * xml)
      */
     default boolean useDynamicSliceSummary() {
         return false;
@@ -110,12 +129,15 @@ public interface Sliceable {
     }
 
     /**
-     * Settings Slices which require background work, such as updating lists should implement a
-     * {@link SliceBackgroundWorker} and return it here. An example of background work is updating
+     * Settings Slices which require background work, such as updating lists should
+     * implement a
+     * {@link SliceBackgroundWorker} and return it here. An example of background
+     * work is updating
      * a list of Wifi networks available in the area.
      *
-     * @return a {@link Class<? extends SliceBackgroundWorker>} to perform background work for the
-     * slice.
+     * @return a {@link Class<? extends SliceBackgroundWorker>} to perform
+     *         background work for the
+     *         slice.
      */
     default Class<? extends SliceBackgroundWorker> getBackgroundWorkerClass() {
         return null;
@@ -127,11 +149,14 @@ public interface Sliceable {
     int NO_RES = 0;
 
     /**
-     * @return a string resource declared in res/values/menu_keys.xml that indicates which menu
-     * entry should be highlighted in two-pane mode, or {@link #NO_RES} representing highlighting is
-     * not applicable.
+     * @return a string resource declared in res/values/menu_keys.xml that indicates
+     *         which menu
+     *         entry should be highlighted in two-pane mode, or {@link #NO_RES}
+     *         representing highlighting is
+     *         not applicable.
      */
-    @StringRes default int getSliceHighlightMenuRes() {
+    @StringRes
+    default int getSliceHighlightMenuRes() {
         return NO_RES;
     }
 }
