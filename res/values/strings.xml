@@ -14510,6 +14510,7 @@
     <string name="connectivity_check_title">Internet connectivity check</string>
     <string name="connectivity_check_summary">HTTP endpoints to use for performing internet connectivity checks.</string>
 
+<<<<<<< HEAD
     <string name="sandboxed_google_play">Sandboxed Google Play</string>
     <string name="sandboxed_google_play_work_profile">Sandboxed Google Play (work profile)</string>
 
@@ -14523,4 +14524,11 @@
 
     <string name="app_info_install_time">Installed: %1$s</string>
     <string name="app_info_update_time">Updated: %1$s</string>
+=======
+    <!-- Min / max refresh rate -->
+    <string name="min_refresh_rate_title">Minimum refresh rate</string>
+    <string name="max_refresh_rate_title">Maximum refresh rate</string>
+    <string name="refresh_rate_placeholder" translatable="false"><xliff:g id="refresh_rate" example="60">%1$s</xliff:g> Hz</string>
+
+>>>>>>> 61c2c53014 (Settings: add refresh rate pref strings)
 </resources>
