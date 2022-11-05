@@ -20,6 +20,7 @@ import static android.provider.Settings.System.THREE_FINGER_GESTURE;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.text.TextUtils;
 
@@ -51,12 +52,12 @@ public class SwipeToScreenshotPreferenceController extends GesturePreferenceCont
 
     @Override
     public boolean setChecked(boolean isChecked) {
-        return Settings.System.putInt(mContext.getContentResolver(), THREE_FINGER_GESTURE,
-                isChecked ? ON : OFF);
+        return Settings.System.putIntForUser(mContext.getContentResolver(), THREE_FINGER_GESTURE,
+                isChecked ? ON : OFF, UserHandle.USER_CURRENT);
     }
 
     @Override
     public boolean isChecked() {
-        return Settings.System.getInt(mContext.getContentResolver(), THREE_FINGER_GESTURE, 0) != 0;
+        return Settings.System.getIntForUser(mContext.getContentResolver(), THREE_FINGER_GESTURE, 0, UserHandle.USER_CURRENT) != 0;
     }
 }
