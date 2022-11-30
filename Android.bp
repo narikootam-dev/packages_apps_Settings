@@ -44,11 +44,8 @@ android_library {
         "SettingsLib-search-defaults",
     ],
 
-    srcs: [
-        "src/**/*.java",
-        "src/**/*.kt",
-        "Powerhub/src/**/*.java",
-        "Powerhub/src/**/*.kt",
+    srcs: ["src/**/*.java", "src/**/*.kt",
+           "Powerhub/src/**/*.java",
     ],
 
     aaptflags: ["--extra-packages com.power.hub"],
@@ -66,6 +63,7 @@ android_library {
         "androidx.appcompat_appcompat",
         "androidx.cardview_cardview",
         "androidx.fragment_fragment",
+        "androidx.fragment_fragment-ktx",
         "androidx.preference_preference",
         "androidx.preference_preference-ktx",
         "androidx.recyclerview_recyclerview",
@@ -91,9 +89,10 @@ android_library {
         "lottie",
         "WifiTrackerLib",
         "SettingsLibActivityEmbedding",
+        "faceunlock_framework",
+        "kotlin-stdlib",
         "kotlinx_coroutines_android",
         "kotlinx_coroutines",
-        "faceunlock_framework",
     ],
 
     libs: [
