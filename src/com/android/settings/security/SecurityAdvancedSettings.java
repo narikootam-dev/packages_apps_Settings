@@ -36,6 +36,7 @@ import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.overlay.FeatureFactory;
 import com.android.settings.safetycenter.SafetyCenterManagerWrapper;
 import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.security.applock.AppLockSettingsPreferenceController;
 import com.android.settings.security.trustagent.TrustAgentListPreferenceController;
 import com.android.settings.widget.PreferenceCategoryController;
 import com.android.settingslib.core.AbstractPreferenceController;
@@ -56,6 +57,8 @@ public class SecurityAdvancedSettings extends DashboardFragment {
 
     private static final String TAG = "SecurityAdvancedSettings";
     private static final String WORK_PROFILE_SECURITY_CATEGORY = "security_category_profile";
+
+    private static final String APP_LOCK_PREF_KEY = "app_lock";
 
     /** Used in case of old Security settings when SafetyCenter is disabled */
     private static final String CATEGORY_SECURITY_LEGACY_ADVANCED_SETTINGS =
@@ -139,7 +142,7 @@ public class SecurityAdvancedSettings extends DashboardFragment {
     }
 
     private static List<AbstractPreferenceController> buildPreferenceControllers(Context context,
-            Lifecycle lifecycle, DashboardFragment host) {
+            Lifecycle lifecycle, SecurityAdvancedSettings host) {
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
         controllers.add(new TrustAgentListPreferenceController(context, host, lifecycle));
 
@@ -158,6 +161,8 @@ public class SecurityAdvancedSettings extends DashboardFragment {
         controllers.add(new PreferenceCategoryController(context, WORK_PROFILE_SECURITY_CATEGORY)
                 .setChildren(profileSecurityControllers));
         controllers.addAll(profileSecurityControllers);
+        controllers.add(new AppLockSettingsPreferenceController(
+                context, APP_LOCK_PREF_KEY, host, lifecycle));
 
         return controllers;
     }
